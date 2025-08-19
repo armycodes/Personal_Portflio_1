@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Grad Portfolio</title>
+    <meta name="description" content="A minimal, modern, animated portfolio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="gradient-bg" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Home">NG</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Change theme" title="Change theme">
+        <span class="visually-hidden">Change theme</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="section hero fade-on-out" id="hero">
+        <div class="container">
+          <div class="stack gap-l">
+            <div class="stack gap-s reveal">
+              <p class="eyebrow">Open to roles — SWE • Frontend • Product</p>
+              <h1 class="headline">
+                Hi, I'm <span class="accent">Your Name</span> — a new grad crafting delightful, performant experiences.
+              </h1>
+              <p class="subhead">
+                I love building clean, accessible UIs, shipping fast, and learning even faster.
+              </p>
+            </div>
+            <div class="actions reveal">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn" href="#contact">Contact Me</a>
+              <a class="btn subtle" href="#about">About</a>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+          <span>Scroll</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="about">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>About</h2>
+            <p>Blending design sense with engineering rigor.</p>
+          </div>
+          <div class="grid two">
+            <div class="card reveal">
+              <h3>Background</h3>
+              <p>
+                I'm a recent graduate with hands-on experience in modern web stacks.
+                I enjoy working across the stack, with a soft spot for frontend craftsmanship.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>Focus</h3>
+              <p>
+                Interaction design, performance, developer experience, and accessibility.
+                Currently exploring animation systems and design tokens.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="projects">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Projects</h2>
+            <p>Selected work — more on GitHub.</p>
+          </div>
+          <div class="grid three">
+            <article class="card hover-tilt reveal">
+              <h3>Nova Notes</h3>
+              <p>Minimal markdown notes app with sync and offline-first architecture.</p>
+              <a class="text-link" href="#">View repo →</a>
+            </article>
+            <article class="card hover-tilt reveal">
+              <h3>Pulse Dashboard</h3>
+              <p>Real-time analytics dashboard with WebSocket streams and charting.</p>
+              <a class="text-link" href="#">Case study →</a>
+            </article>
+            <article class="card hover-tilt reveal">
+              <h3>Aurora UI</h3>
+              <p>Micro CSS library for elegant defaults and fluid typography.</p>
+              <a class="text-link" href="#">Docs →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="skills">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Skills</h2>
+            <p>Tools I use to build and iterate.</p>
+          </div>
+          <ul class="tags reveal">
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>CSS/Animation</li>
+            <li>Accessibility</li>
+            <li>Testing</li>
+            <li>Python</li>
+            <li>Go</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="contact">
+        <div class="container">
+          <div class="card contact-card reveal">
+            <h2>Let's build something great</h2>
+            <p>I'm actively interviewing and available for internships and full-time roles.</p>
+            <div class="actions">
+              <a class="btn primary" href="mailto:you@example.com">Email me</a>
+              <a class="btn" href="#" target="_blank" rel="noreferrer">Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Your Name</p>
+        <p class="muted">Built with care • <a href="#top" class="text-link">Back to top</a></p>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+  </html>
+
