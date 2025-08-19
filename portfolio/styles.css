@@ -158,6 +158,28 @@ body {
 .hero-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: var(--space-xl); }
 @media (max-width: 1000px) { .hero-layout { grid-template-columns: 1fr; } }
 .hero-visual { display: grid; place-items: center; perspective: 1200px; }
+.hero-photo-frame {
+  width: min(380px, 60vw);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid var(--card-stroke);
+  box-shadow: var(--shadow);
+  transform-style: preserve-3d;
+}
+.hero-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(80% 60% at 20% 0%, rgba(255,255,255,0.18), rgba(255,255,255,0) 60%),
+    linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; transform: translateZ(20px) scale(1.01); }
 .orb3d {
   width: min(380px, 60vw);
   aspect-ratio: 1 / 1;

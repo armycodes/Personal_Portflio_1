@@ -113,8 +113,9 @@
   });
 
   // Subtle parallax for hero orb
-  const orb = document.querySelector('.orb3d');
-  if (orb) {
+  function setupOrbParallax() {
+    const orb = document.querySelector('.orb3d');
+    if (!orb) return;
     let rafId = 0;
     function onPointerMove(e) {
       if (rafId) cancelAnimationFrame(rafId);
@@ -128,6 +129,19 @@
       });
     }
     window.addEventListener('mousemove', onPointerMove, { passive: true });
+  }
+  setupOrbParallax();
+
+  // If hero image fails, fallback to orb and set up parallax
+  const heroImg = document.querySelector('.hero-photo');
+  if (heroImg) {
+    heroImg.addEventListener('error', () => {
+      const container = heroImg.closest('.hero-visual');
+      if (container) {
+        container.innerHTML = '<div class="orb3d"></div>';
+        setupOrbParallax();
+      }
+    });
   }
 })();
 
