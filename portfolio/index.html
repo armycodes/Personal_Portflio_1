@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>New Grad Portfolio</title>
+    <title>Siri Mahalaxmi Portfolio</title>
     <meta name="description" content="A minimal, modern, animated portfolio." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +14,7 @@
     <div class="gradient-bg" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Home">NG</a>
+      <a class="brand" href="#top" aria-label="Home">VS</a>
       <nav class="site-nav" aria-label="Primary">
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#projects">Projects</a>
@@ -33,20 +33,36 @@
     <main id="top">
       <section class="section hero fade-on-out" id="hero">
         <div class="container">
-          <div class="stack gap-l">
-            <div class="stack gap-s reveal">
-              <p class="eyebrow">Open to roles — SWE • Frontend • Product</p>
-              <h1 class="headline">
-                Hi, I'm <span class="accent">Your Name</span> — a new grad crafting delightful, performant experiences.
-              </h1>
-              <p class="subhead">
-                I love building clean, accessible UIs, shipping fast, and learning even faster.
-              </p>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="stack gap-l">
+                <div class="stack gap-s reveal">
+                  <p class="eyebrow">Open to roles — SWE • Frontend • Product</p>
+                  <h1 class="headline">
+                    Hi, I'm <span class="accent">Siri Mahalaxmi Vemula</span> — a new grad crafting delightful, performant experiences.
+                  </h1>
+                  <p class="subhead">
+                    I love building clean, accessible UIs, shipping fast, and learning even faster.
+                  </p>
+                </div>
+                <div class="actions reveal">
+                  <a class="btn primary" href="#projects">View Projects</a>
+                  <a class="btn" href="#contact">Contact Me</a>
+                  <a class="btn subtle" href="#about">About</a>
+                </div>
+              </div>
             </div>
-            <div class="actions reveal">
-              <a class="btn primary" href="#projects">View Projects</a>
-              <a class="btn" href="#contact">Contact Me</a>
-              <a class="btn subtle" href="#about">About</a>
+            <div class="hero-art reveal" aria-hidden="true">
+              <div class="cube-scene">
+                <div class="cube">
+                  <div class="cube-face cube-face--front">VS</div>
+                  <div class="cube-face cube-face--back"></div>
+                  <div class="cube-face cube-face--right"></div>
+                  <div class="cube-face cube-face--left"></div>
+                  <div class="cube-face cube-face--top"></div>
+                  <div class="cube-face cube-face--bottom"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -112,18 +128,182 @@
       <section class="section fade-on-out" id="skills">
         <div class="container">
           <div class="section-head reveal">
-            <h2>Skills</h2>
-            <p>Tools I use to build and iterate.</p>
+            <h2>Technical Skills</h2>
+            <h3 class="skills-subtitle">Frontend</h3>
+            <p>Tools and technologies I use to build Frontend</p>
           </div>
-          <ul class="tags reveal">
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>CSS/Animation</li>
-            <li>Accessibility</li>
-            <li>Testing</li>
-            <li>Python</li>
-            <li>Go</li>
+          <ul class="skill-grid reveal">
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" />
+              <span>JavaScript</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" />
+              <span>TypeScript</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="40" height="40" />
+              <span>React</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="40" height="40" />
+              <span>Node.js</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS / Animation" width="40" height="40" />
+              <span>CSS / Animation</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <svg class="icon" viewBox="0 0 24 24" width="40" height="40" aria-hidden="true">
+                <path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM8.5 10a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm7 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM12 14.5a3.5 3.5 0 00-3.46 3h6.92A3.5 3.5 0 0012 14.5z"/>
+              </svg>
+              <span>Accessibility</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" width="40" height="40" />
+              <span>Express.js</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="operating-system">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Operating System</h2>
+            <p>I'm comfortable using the following OS</p>
+          </div>
+          <ul class="skill-grid reveal">
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows" width="40" height="40" />
+              <span>Windows</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="40" height="40" />
+              <span>Linux</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="backend">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Backend</h2>
+            <p>Backend tools and technologies that I use to build projects</p>
+          </div>
+          <ul class="skill-grid reveal">
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40" />
+              <span>Java</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40" height="40" />
+              <span>Python</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node" width="40" height="40" />
+              <span>Node</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" width="40" height="40" />
+              <span>Flask</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" width="40" height="40" />
+              <span>Postman API</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <svg class="icon" viewBox="0 0 24 24" width="40" height="40" aria-hidden="true">
+                <path fill="currentColor" d="M4 7h16v2H4zm0 4h12v2H4zm0 4h8v2H4z"/>
+              </svg>
+              <span>REST APIs</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.IO" width="40" height="40" />
+              <span>Flask-SocketIO</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="tools-infra">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Tools &amp; Infra</h2>
+          </div>
+          <ul class="skill-grid reveal">
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="40" height="40" />
+              <span>Git</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="40" height="40" />
+              <span>GitHub</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" width="40" height="40" />
+              <span>Linux</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-plain.svg" alt="GitHub Actions" width="40" height="40" />
+              <span>GitHub Actions</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="languages">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Languages</h2>
+          </div>
+          <ul class="skill-grid reveal">
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="40" height="40" />
+              <span>Python (Beginner)</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40" height="40" />
+              <span>Java (Intermediate)</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40" />
+              <span>JavaScript</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40" />
+              <span>TypeScript</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <svg class="icon" viewBox="0 0 24 24" width="40" height="40" aria-hidden="true">
+                <ellipse cx="12" cy="7" rx="8" ry="3" fill="currentColor"/>
+                <path d="M4 7v7c0 1.66 3.58 3 8 3s8-1.34 8-3V7" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <span>SQL</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section fade-on-out" id="databases">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2>Databases</h2>
+          </div>
+          <ul class="skill-grid reveal">
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="40" height="40" />
+              <span>MongoDB</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="40" height="40" />
+              <span>MySQL</span>
+            </li>
+            <li class="skill tilt" data-tilt>
+              <img class="icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cassandra/cassandra-original.svg" alt="Cassandra" width="40" height="40" />
+              <span>Cassandra</span>
+            </li>
           </ul>
         </div>
       </section>
@@ -144,8 +324,8 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year"></span> Your Name</p>
-        <p class="muted">Built with care • <a href="#top" class="text-link">Back to top</a></p>
+        <p>© <span id="year"></span> Siri Mahalaxmi Vemula</p>
+        <p class="muted">Built By Siri Mahalaxmi Vemula • <a href="#top" class="text-link">Back to top</a></p>
       </div>
     </footer>
 

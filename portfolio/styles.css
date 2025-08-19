@@ -155,6 +155,24 @@ body {
 .section h2 { font-size: clamp(24px, 4.5vw, 40px); margin: 0 0 var(--space-s) 0; }
 
 .hero { text-align: left; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: var(--space-xl); }
+@media (max-width: 1000px) { .hero-grid { grid-template-columns: 1fr; } .hero-art { order: -1; } }
+.hero-copy { }
+.hero-art { display: grid; place-items: center; }
+
+/* 3D Hero Cube */
+.cube-scene { width: clamp(220px, 32vw, 320px); height: clamp(220px, 32vw, 320px); perspective: 1000px; }
+.cube { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: rotate-cube 18s linear infinite; }
+.cube-face { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 700; font-size: clamp(28px, 4vw, 40px); color: #051018; background: linear-gradient(135deg, var(--accent), rgba(255,255,255,0.9)); border: 1px solid rgba(255,255,255,0.35); box-shadow: 0 20px 40px rgba(0,0,0,0.35), inset 0 0 40px rgba(255,255,255,0.25); border-radius: 18px; }
+.cube-face--front { transform: translateZ(calc(50%)); }
+.cube-face--back { transform: rotateY(180deg) translateZ(calc(50%)); background: linear-gradient(135deg, rgba(255,255,255,0.9), var(--accent)); }
+.cube-face--right { transform: rotateY(90deg) translateZ(calc(50%)); background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2)); }
+.cube-face--left { transform: rotateY(-90deg) translateZ(calc(50%)); background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.2)); }
+.cube-face--top { transform: rotateX(90deg) translateZ(calc(50%)); background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.1)); }
+.cube-face--bottom { transform: rotateX(-90deg) translateZ(calc(50%)); background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.1)); }
+@keyframes rotate-cube { from { transform: rotateX(-18deg) rotateY(0deg); } to { transform: rotateX(-18deg) rotateY(360deg); } }
+.cube:hover { animation-duration: 10s; }
+
 .scroll-indicator {
   position: absolute;
   left: 50%;
@@ -189,6 +207,20 @@ body {
 
 .tags { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
 .tags li { padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); }
+
+/* Skill grid with icons */
+.skills-subtitle { margin: 0 0 var(--space-s); font-size: 18px; opacity: 0.85; }
+.skill-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-m); }
+@media (max-width: 1100px) { .skill-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.skill { position: relative; display: grid; place-items: center; gap: 8px; padding: 18px 12px; border-radius: 16px; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.14); box-shadow: var(--shadow); text-align: center; transform-style: preserve-3d; perspective: 800px; }
+.skill span { font-size: 14px; color: var(--fg); opacity: 0.9; transform: translateZ(18px); }
+.skill .icon { width: 40px; height: 40px; transform: translateZ(24px) rotateX(0deg) rotateY(0deg); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35)); will-change: transform; animation: float-3d 6s ease-in-out infinite; }
+@keyframes float-3d { 0%,100% { transform: translateZ(24px) translateY(0) rotateX(0) rotateY(0); } 50% { transform: translateZ(28px) translateY(-6px) rotateX(4deg) rotateY(-4deg); } }
+.skill:after { content: ""; position: absolute; inset: -1px; border-radius: 16px; padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+
+/* Pointer tilt state applied via JS */
+.tilt.is-tilting { transition: transform 120ms ease; }
 
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn {
