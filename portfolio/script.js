@@ -132,16 +132,37 @@
   }
   setupOrbParallax();
 
-  // If hero image fails, fallback to orb and set up parallax
+  // If hero image fails, try alternate extensions before falling back to orb
   const heroImg = document.querySelector('.hero-photo');
   if (heroImg) {
+    const originalSrc = heroImg.getAttribute('src') || '';
+    const tried = new Set([originalSrc]);
+    const lower = originalSrc.toLowerCase();
+    let base = originalSrc;
+    const extMatch = lower.match(/\.(png|jpe?g|webp|gif)(\?.*)?$/i);
+    if (extMatch) {
+      base = originalSrc.slice(0, originalSrc.toLowerCase().lastIndexOf(extMatch[0]));
+    }
+    const candidates = [
+      base + '.jpg',
+      base + '.jpeg',
+      base + '.png',
+      base + '.webp'
+    ].filter((c) => !tried.has(c));
+
     heroImg.addEventListener('error', () => {
+      const next = candidates.shift();
+      if (next && !tried.has(next)) {
+        tried.add(next);
+        heroImg.setAttribute('src', next);
+        return;
+      }
       const container = heroImg.closest('.hero-visual');
       if (container) {
         container.innerHTML = '<div class="orb3d"></div>';
         setupOrbParallax();
       }
-    });
+    }, { once: false });
   }
 })();
 
