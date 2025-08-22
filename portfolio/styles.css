@@ -144,10 +144,10 @@ body {
 /* Sections */
 .section {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   display: grid;
   align-items: center;
-  padding: var(--space-xl) 0;
+  padding: var(--space-l) 0;
   opacity: var(--section-opacity, 1);
   transition: opacity 260ms ease;
 }
@@ -155,7 +155,7 @@ body {
 .section h2 { font-size: clamp(24px, 4.5vw, 40px); margin: 0 0 var(--space-s) 0; }
 
 .hero { text-align: left; }
-.hero-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: var(--space-xl); }
+.hero-layout { display: grid; grid-template-columns: 1fr; align-items: center; gap: var(--space-xl); }
 @media (max-width: 1000px) { .hero-layout { grid-template-columns: 1fr; } }
 .hero-visual { display: grid; place-items: center; perspective: 1200px; }
 .orb3d {
