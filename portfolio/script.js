@@ -64,28 +64,27 @@
   );
   sections.forEach((s) => activeObserver.observe(s));
 
-  // Theme cycling
-  const themes = ['default', 'sunset', 'aurora'];
-  function getNextTheme(current) {
-    const idx = themes.indexOf(current);
-    return themes[(idx + 1) % themes.length];
+  // Theme toggle between default (sunset) and dark
+const themes = ['default', 'dark'];
+
+function applyTheme(theme) {
+  if (theme === 'default') {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
+    document.documentElement.setAttribute('data-theme', theme);
   }
-  function applyTheme(theme) {
-    if (theme === 'default') {
-      document.documentElement.removeAttribute('data-theme');
-    } else {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
-    try { localStorage.setItem('theme', theme); } catch {}
-  }
-  const savedTheme = (() => { try { return localStorage.getItem('theme'); } catch { return null; } })();
-  if (savedTheme && themes.includes(savedTheme)) applyTheme(savedTheme);
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'default';
-      applyTheme(getNextTheme(current));
-    });
-  }
+  try { localStorage.setItem('theme', theme); } catch {}
+}
+
+const savedTheme = (() => { try { return localStorage.getItem('theme'); } catch { return null; } })();
+if (savedTheme && themes.includes(savedTheme)) applyTheme(savedTheme);
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'default';
+    const next = current === 'default' ? 'dark' : 'default';
+    applyTheme(next);
+  });
+}
 
   // 3D tilt interaction for skill items and cards
   const tiltItems = Array.from(document.querySelectorAll('.tilt, .hover-tilt'));
