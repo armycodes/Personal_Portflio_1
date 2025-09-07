@@ -1,11 +1,11 @@
-/* Root theme tokens */
+/* Default: Sunset theme */
 :root {
-  --bg-1: #0b1020;
-  --bg-2: #111a3a;
-  --bg-3: #1a2e4f;
+  --bg-1: #1b0b10;
+  --bg-2: #2b1620;
+  --bg-3: #3b1f2b;
   --fg: #e7ebf6;
   --muted: #aab3c5;
-  --accent: #8ad8ff;
+  --accent: #ff9eb3;
   --card: rgba(255, 255, 255, 0.06);
   --card-stroke: rgba(255, 255, 255, 0.12);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -18,19 +18,14 @@
   --space-xl: 64px;
 }
 
-/* Alt themes (cycled via JS) */
-[data-theme="sunset"] {
-  --bg-1: #1b0b10;
-  --bg-2: #2b1620;
-  --bg-3: #3b1f2b;
-  --accent: #ff9eb3;
-}
-
-[data-theme="aurora"] {
-  --bg-1: #071412;
-  --bg-2: #0b201e;
-  --bg-3: #10312c;
-  --accent: #9afcc4;
+/* Alternate: Deep Dark theme */
+[data-theme="dark"] {
+  --bg-1: #070a12;
+  --bg-2: #0b1422;
+  --bg-3: #0e1b2d;
+  --fg: #e6ecf5;
+  --muted: #9aa6ba;
+  --accent: #8ad8ff;
 }
 
 /* Global */
@@ -193,6 +188,13 @@ body {
 .tags li { padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); }
 
 /* Skills grid with icons */
+/* Make monochrome SVG icons look good on the dark theme */
+.icon-mono {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  filter: invert(96%) sepia(2%) saturate(320%) hue-rotate(180deg) brightness(105%) contrast(95%);
+}
 .skills-grid {
   --item-size: 120px;
   list-style: none;
@@ -290,4 +292,68 @@ body {
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+/*this is for the picture in the website*/
+/* Ensure hero is two-column on desktop for pro layout */
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: var(--space-xl); }
+@media (max-width: 1000px) { .hero-grid { grid-template-columns: 1fr; } .hero-art { order: -1; } }
+
+
+
+/* Professional two-column hero (stacks on mobile) */
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: var(--space-xl); }
+@media (max-width: 1000px) { .hero-grid { grid-template-columns: 1fr; } .hero-art { order: -1; } }
+
+/* Social links */
+.social-links { display: flex; align-items: center; gap: 12px; }
+.social {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06); color: var(--fg);
+  text-decoration: none;
+}
+.social svg { transform: translateZ(18px); }
+
+/* Portrait frame */
+.portrait { display: grid; place-items: center; }
+.portrait-frame {
+  position: relative;
+  width: clamp(200px, 34vw, 320px);
+  aspect-ratio: 4/5;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: translateZ(18px) scale(1.02);
+  filter: saturate(1.02) contrast(1.02);
+}
+.portrait-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(600px 400px at 80% 10%, var(--accent), transparent 55%);
+  opacity: 0.35;
+  filter: blur(30px);
+  transform: translateZ(10px);
+  pointer-events: none;
+}
+.portrait-frame:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0));
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Optional: tighten section spacing site-wide */
+.section { min-height: auto; padding: var(--space-l) 0; }
+.hero { min-height: 88vh; }
 
